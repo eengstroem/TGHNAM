@@ -6,8 +6,9 @@ public class ProjectileShooter : MonoBehaviour
 {
     public GameObject projectile; //reference to prefab that will be spawned
     public Transform spawnTransform; //Where projectile will spawn and it's direction/rotation
-    public float cooldown; //time required before next shot being fired
+    public float cooldown = 100000; //time required before next shot being fired
     public bool shootingEnabled = true; //Are you allowed to shoot?
+    public Camera mainCam;
 
     private float lastShot;
 
@@ -19,9 +20,17 @@ public class ProjectileShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enabled && (Time.time >= lastShot + cooldown) && Input.GetKeyDown(KeyCode.Mouse0))
+        if (shootingEnabled && (Time.time >= lastShot + cooldown) && Input.GetMouseButton(0))
         {
-            Instantiate(projectile, spawnTransform.position, spawnTransform.rotation);
+            Debug.DrawLine(Input.mousePosition, transform.position);
+            var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 relativePos = mousePos - transform.position;
+            float angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
+            var rotation = Quaternion.Euler(0,0, angle+90);
+
+
+            Instantiate(projectile, transform.position, rotation);
+            lastShot = Time.time;
         }
     }
 }
