@@ -1,26 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RandomSpawner : MonoBehaviour
 {
-    public Transform[] spawnPoints;
-    public GameObject[] enemyPrefabs;
+    [SerializeField]
+    public GameObject enemyPrefabs;
+
+    [SerializeField] 
+    private float spawnInterval = 4.0f;
     
     void Start()
     {
-        
+        StartCoroutine(spawnEnemy(spawnInterval, enemyPrefabs));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            int randomEnemy = Random.Range(0, enemyPrefabs.Length);
-            int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
+        yield return new WaitForSeconds(interval);      // Silly random settings to spawn at random points
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-6f, 6f), 0),
+            Quaternion.identity);
 
-            Instantiate(enemyPrefabs[0], spawnPoints[randomSpawnPoint].position, transform.rotation);
-        }
+        StartCoroutine(spawnEnemy(interval, enemy));
     }
+
 }
