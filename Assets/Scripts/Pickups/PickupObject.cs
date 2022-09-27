@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PickupObject : MonoBehaviour
 {
+
+    private PlayerBonuses _playerBonuses = new ();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class PickupObject : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player"))
         {
+            _playerBonuses.GainBonus(gameObject);
             Destroy(gameObject);
         }
     }
