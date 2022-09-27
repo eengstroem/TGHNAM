@@ -1,42 +1,51 @@
+using System.Linq;
 using UnityEngine;
 
-
-//[RequireComponent(typeof(Rigidbody2D))]
 public class Projectile : MonoBehaviour
 {
-
-    public float speed = 10f;   // projectile's speed
+    private float baseSpeed = 10f; // base speed of the projectile
+    
+    public float speed = 20f;   // modified speed of the projectile
     public float lifespan = 3f; // projectile's lifespan (in seconds)
-
-    //private Rigidbody2D m_Rigid;
-
-
-    void Awake()
-    {
-      //  m_Rigid = GetComponent<Rigidbody2D>();
-    }
-
+    
+    public Rigidbody2D m_Rigid;
+    public CapsuleCollider2D m_Collider;
+    
     /// <summary>
     /// Message that is called before the first frame update
     /// </summary>
     void Start()
     {
-        //m_Rigid.AddForce(m_Rigid.transform.forward * speed);
-        Debug.Log("X: " + transform.position.x);
-        Debug.Log("Y: " + transform.position.y);
-        Debug.Log("Z: " + transform.position.z);
-       // Debug.Log("Velocity: " + m_Rigid.velocity);
+        var projectile = GameObject.FindGameObjectsWithTag("Projectile").ToList();
+        projectile.ForEach(x => Physics2D.IgnoreCollision(x.GetComponent<Collider2D>(), m_Collider));
+        
+        var forward = -transform.up;
+        forward.z = 0;
+        
+        m_Rigid.AddForce(baseSpeed * speed * forward);
+        
         Destroy(gameObject, lifespan);
     }
 
     void Update()
     {
-        var forward = -transform.up;
-        forward.z = 0;
-        transform.position += forward * speed * Time.deltaTime;
-        Debug.Log("X: " + transform.position.x);
-        Debug.Log("Y: " + transform.position.y);
-        Debug.Log("Z: " + transform.position.z);
-        //Debug.Log("Velocity: " + m_Rigid.velocity);
+        //transform.position += forward * speed * Time.deltaTime;
+        Debug.Log("Velocity: " + m_Rigid.velocity);
+        Debug.Log("Velocity magnitude: " + m_Rigid.velocity.magnitude);
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Projectile":
+                return;
+            case "Player":
+                return;
+            default:
+                Debug.Log("Collision");
+                Destroy(gameObject);
+                break;
+        }
     }
 }

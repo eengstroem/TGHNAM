@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileShooter : MonoBehaviour
@@ -20,7 +18,7 @@ public class ProjectileShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (shootingEnabled && (Time.time >= lastShot + cooldown) && Input.GetMouseButton(0))
+        if (shootingEnabled && Time.time >= lastShot + cooldown && Input.GetMouseButton(0))
         {
             Debug.DrawLine(Input.mousePosition, transform.position);
             var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
