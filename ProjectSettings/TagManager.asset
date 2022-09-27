@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Pickups
   - Projectile
   layers:
   - Default
@@ -41,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tile
+    uniqueID: 726544759
+    locked: 0
+  - name: Objects
+    uniqueID: 2480239495
+    locked: 0
+  - name: UI
+    uniqueID: 4216283069
     locked: 0
