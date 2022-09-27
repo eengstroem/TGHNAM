@@ -16,9 +16,10 @@ public class Projectile : MonoBehaviour
     /// </summary>
     void Start()
     {
-        var projectile = GameObject.FindGameObjectsWithTag("Projectile").ToList();
-        projectile.ForEach(x => Physics2D.IgnoreCollision(x.GetComponent<Collider2D>(), m_Collider));
-        
+        Physics2D.IgnoreCollision(GameObject.FindWithTag("Player").GetComponent<Collider2D>(), m_Collider);
+        var projectiles = GameObject.FindGameObjectsWithTag("Projectile").ToList();
+        projectiles.ForEach(x => Physics2D.IgnoreCollision(x.GetComponent<Collider2D>(), m_Collider));
+
         var forward = -transform.up;
         forward.z = 0;
         
