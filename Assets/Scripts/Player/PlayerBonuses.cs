@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
-public class PlayerBonuses : MonoBehaviour
+public class PlayerBonuses : PlayerBehaviour
 {
     private static int _credits = 0;
 
