@@ -15,6 +15,11 @@ public class PlayerHealth : MonoBehaviour
 
     void TakeDamage(int amount)
     {
-        currentHealth = currentHealth-1;
+        currentHealth = currentHealth-amount;
+        
+        if (currentHealth <= 0)
+        {
+            //Become dead
+        }
     }
 }
