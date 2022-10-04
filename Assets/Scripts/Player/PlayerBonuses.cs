@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
-    public class PlayerBonuses : PlayerBehaviour
+    public class PlayerBonuses : MonoBehaviour
     {
         private static int _credits = 0;
         private static int _experience = 0;

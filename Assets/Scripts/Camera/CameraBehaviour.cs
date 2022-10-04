@@ -4,7 +4,7 @@ namespace Assets.Scripts.Camera
 {
     public class CameraBehaviour : MonoBehaviour
     {
-        public PlayerBehaviour player;
+        public PlayerMovement player;
 
         // Start is called before the first frame update
         void Start()
