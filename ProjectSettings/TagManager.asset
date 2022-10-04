@@ -8,6 +8,7 @@ TagManager:
   - CreditCard
   - Enemy
   - Experience
+  - PlayerHealthBar
   layers:
   - Default
   - TransparentFX

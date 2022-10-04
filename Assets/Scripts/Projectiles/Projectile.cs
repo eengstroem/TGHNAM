@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             case "Player":
                 return;
             case "Enemy":
-                collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(25);
+                collision.gameObject.GetComponent<EnemyCore>().TakeDamage(25);
                 Destroy(gameObject);
                 return;
             default:

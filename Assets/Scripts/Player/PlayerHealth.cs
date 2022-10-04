@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -13,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         currentHealth = currentHealth-amount;
         

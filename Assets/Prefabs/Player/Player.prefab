@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -1119756499146301393}
   - component: {fileID: 4649322889516198252}
   - component: {fileID: 7500867938836943557}
+  - component: {fileID: 1014438018151732934}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -198,3 +199,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
+--- !u!114 &1014438018151732934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440412347625572981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3f8b677cf66e24ebb8892a2e2524de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 70

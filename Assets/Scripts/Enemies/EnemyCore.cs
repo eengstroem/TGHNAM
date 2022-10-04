@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyCore : MonoBehaviour
 {
+    public int damage = 10;
     public int health = 100;
     public GameObject experienceOrb;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +16,9 @@ public class EnemyHealth : MonoBehaviour
     {
     }
     
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damageTaken)
     {
-        health -= damage;
+        health -= damageTaken;
         if (health <= 0)
         {
             Die();
@@ -28,5 +29,13 @@ public class EnemyHealth : MonoBehaviour
     {
         Instantiate(experienceOrb, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+        }
     }
 }
