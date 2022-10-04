@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -9,16 +8,14 @@ public class Projectile : MonoBehaviour
     public float lifespan = 3f; // projectile's lifespan (in seconds)
     
     public Rigidbody2D m_Rigid;
-    public CapsuleCollider2D m_Collider;
     
     /// <summary>
     /// Message that is called before the first frame update
     /// </summary>
     void Start()
     {
-        Physics2D.IgnoreCollision(GameObject.FindWithTag("Player").GetComponent<Collider2D>(), m_Collider);
-        var projectiles = GameObject.FindGameObjectsWithTag("Projectile").ToList();
-        projectiles.ForEach(x => Physics2D.IgnoreCollision(x.GetComponent<Collider2D>(), m_Collider));
+        Physics2D.IgnoreLayerCollision(0, 8, true);
+        Physics2D.IgnoreLayerCollision(8, 8, true);
 
         var forward = -transform.up;
         forward.z = 0;
