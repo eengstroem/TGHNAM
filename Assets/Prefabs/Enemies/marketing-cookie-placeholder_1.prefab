@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 3117504342161984183}
   - component: {fileID: 1409070691386823554}
   - component: {fileID: 6928143041232744021}
-  - component: {fileID: -7354996827581260159}
   - component: {fileID: 5029801050172580000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: marketing-cookie-placeholder_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -75,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1814727801
-  m_SortingLayer: 2
+  m_SortingLayerID: -956611113
+  m_SortingLayer: 5
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 227619327879ce74588f7c031930b8f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -140,20 +139,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2.5, y: 2.5}
   m_Direction: 0
---- !u!114 &-7354996827581260159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117504342161984180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f9c373e0af2b264797c8799eb4c28fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  experienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}
 --- !u!114 &5029801050172580000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab08d3d3f4840d3479bf9244bb8c62e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
+  damage: 10
   health: 100
   experienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}

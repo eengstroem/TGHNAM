@@ -7,7 +7,8 @@ public class ProjectileShooter : MonoBehaviour
     public float cooldown = 100000; //time required before next shot being fired
     public bool shootingEnabled = true; //Are you allowed to shoot?
     public Camera mainCam;
-
+    public AudioSource audioSource;
+    
     private float lastShot;
 
 
@@ -15,6 +16,7 @@ public class ProjectileShooter : MonoBehaviour
     {
         lastShot = Time.time; //Time object not accessible in constructor or initializer
     }
+    
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +30,7 @@ public class ProjectileShooter : MonoBehaviour
 
 
             Instantiate(projectile, transform.position, rotation);
+            audioSource.PlayOneShot(audioSource.clip);
             lastShot = Time.time;
         }
     }

@@ -17,8 +17,6 @@ public class EnemyPathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
-        enemies.ForEach(x => Physics2D.IgnoreCollision(x.GetComponent<Collider2D>(), m_Collider));
     }
 
     // Update is called once per frame

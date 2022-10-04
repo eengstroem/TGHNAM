@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014438018151732934, guid: 3b6300e6df1150e4d909034669aef803, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2440412347625572981, guid: 3b6300e6df1150e4d909034669aef803, type: 3}
       propertyPath: m_Name
       value: Player
@@ -202,7 +206,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2692926823258748889, guid: 3b6300e6df1150e4d909034669aef803, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3b6300e6df1150e4d909034669aef803, type: 3}
 --- !u!114 &381684943 stripped
 MonoBehaviour:
@@ -2467,7 +2472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3117504342161984182, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3117504342161984185, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_RootOrder
@@ -2533,11 +2538,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7831093397286282551, guid: 52df530ca135abd44a3818f9c145e300, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.9746113
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 7831093397286282551, guid: 52df530ca135abd44a3818f9c145e300, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5203001
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7831093397286282551, guid: 52df530ca135abd44a3818f9c145e300, type: 3}
       propertyPath: m_LocalPosition.z
