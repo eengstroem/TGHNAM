@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PickupObject : MonoBehaviour
@@ -22,10 +19,8 @@ public class PickupObject : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Player"))
-        {
-            _playerBonuses.GainBonus(gameObject);
-            Destroy(gameObject);
-        }
+        if (!col.gameObject.CompareTag("Player")) return;
+        _playerBonuses.GainBonus(gameObject);
+        Destroy(gameObject);
     }
 }

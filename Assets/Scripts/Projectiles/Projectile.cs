@@ -43,6 +43,10 @@ public class Projectile : MonoBehaviour
                 return;
             case "Player":
                 return;
+            case "Enemy":
+                collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(25);
+                Destroy(gameObject);
+                return;
             default:
                 Debug.Log("Collision");
                 Destroy(gameObject);
