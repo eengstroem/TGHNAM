@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public float maxHealth;
-    public float currentHealth;
+    public class PlayerHealth : MonoBehaviour
+    {
+        public float maxHealth;
+        public float currentHealth;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage(int amount)
-    {
-        currentHealth = currentHealth-amount;
-        
-        if (currentHealth <= 0)
+        // Start is called before the first frame update
+        void Start()
         {
-            //Become dead
+            currentHealth = maxHealth;
+        }
+
+        public void TakeDamage(int amount)
+        {
+            currentHealth = currentHealth-amount;
+        
+            if (currentHealth <= 0)
+            {
+                //Become dead
+            }
         }
     }
 }

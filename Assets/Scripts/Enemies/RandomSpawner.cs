@@ -1,24 +1,27 @@
 using System.Collections;
 using UnityEngine;
 
-public class RandomSpawner : MonoBehaviour
+namespace Assets.Scripts.Enemies
 {
-    [SerializeField]
-    public GameObject enemyPrefabs;
-
-    [SerializeField] private const float SpawnInterval = 4.0f;
-
-    void Start()
+    public class RandomSpawner : MonoBehaviour
     {
-        StartCoroutine(SpawnEnemy(SpawnInterval, enemyPrefabs));
-    }
+        [SerializeField]
+        public GameObject enemyPrefabs;
 
-    private IEnumerator SpawnEnemy(float interval, GameObject enemy)
-    {
-        yield return new WaitForSeconds(interval);      // Silly random settings to spawn at random points
-        var newEnemy = Instantiate(enemy, new Vector3(transform.position.x, transform.position.y, 0),
-            Quaternion.identity);
+        [SerializeField] private const float SpawnInterval = 4.0f;
 
-        StartCoroutine(SpawnEnemy(interval, enemy));
+        void Start()
+        {
+            StartCoroutine(SpawnEnemy(SpawnInterval, enemyPrefabs));
+        }
+
+        private IEnumerator SpawnEnemy(float interval, GameObject enemy)
+        {
+            yield return new WaitForSeconds(interval);      // Silly random settings to spawn at random points
+            var newEnemy = Instantiate(enemy, new Vector3(transform.position.x, transform.position.y, 0),
+                Quaternion.identity);
+
+            StartCoroutine(SpawnEnemy(interval, enemy));
+        }
     }
 }
