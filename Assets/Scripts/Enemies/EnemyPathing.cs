@@ -19,11 +19,11 @@ namespace Assets.Scripts.Enemies
         }
 
         // Update is called once per frame
-        void Update()
+        void FixedUpdate()
         {
-            var step = movementSpeed * Time.deltaTime;
-            var direction = (player.transform.position - transform.position).normalized;
-            rb.MovePosition(transform.position + direction * step);
+            var transformPos = transform.position; 
+            var direction = (player.transform.position - transformPos).normalized;
+            rb.velocity = direction * movementSpeed;
         }
     }
 }
