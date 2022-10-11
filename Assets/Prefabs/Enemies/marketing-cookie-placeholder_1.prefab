@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb85b648e31be34b8f71d494e44ffcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 4
+  movementSpeed: 2.5
   rb: {fileID: 1409070691386823554}
 --- !u!50 &1409070691386823554
 Rigidbody2D:
@@ -118,7 +118,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b55f8f50d3a71284292e0d15e60ea55c, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -136,8 +136,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 2.5, y: 2.5}
+  m_Offset: {x: -0.020407557, y: 0.013604999}
+  m_Size: {x: 1.2619483, y: 2.47279}
   m_Direction: 0
 --- !u!114 &5029801050172580000
 MonoBehaviour:
@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab08d3d3f4840d3479bf9244bb8c62e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  health: 100
-  experienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}
+  Damage: 10
+  Health: 100
+  ExperienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}

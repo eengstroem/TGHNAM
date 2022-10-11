@@ -7,6 +7,8 @@ namespace Assets.Scripts.Enemies
         public int Damage = 10;
         public int Health = 100;
         public GameObject ExperienceOrb;
+
+        private 
     
         // Start is called before the first frame update
         void Start()
@@ -36,9 +38,17 @@ namespace Assets.Scripts.Enemies
     
         void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage);
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
+            }
+        }
+
+        void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
             }
         }
     }
