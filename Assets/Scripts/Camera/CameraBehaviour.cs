@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Camera
@@ -9,7 +10,6 @@ namespace Assets.Scripts.Camera
         // Start is called before the first frame update
         void Start()
         {
-        
         }
 
         // Update is called once per frame

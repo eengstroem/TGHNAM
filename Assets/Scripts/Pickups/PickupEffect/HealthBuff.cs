@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class HealthBuff : ApplyPickupEffects
+namespace Assets.Scripts.Pickups.PickupEffect
 {
-    public float amount;
-    public override void Apply(GameObject applyTo)
+    public class HealthBuff : ApplyPickupEffects
     {
-        //applyTo.GetComponent<PlayerHealth>().currentHealth.value += amount;
+        public float amount;
+        public override void Apply(GameObject applyTo)
+        {
+            //applyTo.GetComponent<PlayerHealth>().currentHealth.value += amount;
+        }
     }
 }

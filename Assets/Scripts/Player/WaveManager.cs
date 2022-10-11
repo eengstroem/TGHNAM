@@ -5,17 +5,17 @@ using Random = UnityEngine.Random;
 
 namespace Assets.Scripts.Player
 {
-    public class Wave_Manager : MonoBehaviour
+    public class WaveManager : MonoBehaviour
     {
         public GameObject enemySpawnerPrefab;
+        
         private List<GameObject> spawners = new ();
-    
-    
+        
         // Start is called before the first frame update
         void Start()
         {
             // Create enemy spawners around the player, outside the camera field of view
-            Random.seed = (int)DateTime.Now.Ticks;
+            Random.InitState((int)DateTime.Now.Ticks);
             var playerPos = GameObject.FindWithTag("Player").transform.position;
             var spawner = Instantiate(enemySpawnerPrefab, new Vector3(playerPos.x + Random.Range(-5, 5), playerPos.y + Random.Range(-5, 5), 0), Quaternion.identity);
             var spawner2 = Instantiate(enemySpawnerPrefab, new Vector3(playerPos.x + Random.Range(-5, 5), playerPos.y + Random.Range(-5, 5), 0), Quaternion.identity);

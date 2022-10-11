@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public abstract class ApplyPickupEffects : ScriptableObject
+namespace Assets.Scripts.Pickups.PickupEffect
 {
-    public abstract void Apply(GameObject applyTo);
+    public abstract class ApplyPickupEffects : ScriptableObject
+    {
+        public abstract void Apply(GameObject applyTo);
+    }
 }

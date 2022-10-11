@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Experience
   - PlayerHealthBar
+  - PlayerExperienceBar
   layers:
   - Default
   - TransparentFX

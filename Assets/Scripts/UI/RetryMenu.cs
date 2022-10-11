@@ -1,35 +1,39 @@
+using Assets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RetryMenu : MonoBehaviour
+namespace Assets.Scripts.UI
 {
-    public GameObject gameOverMenu;
-
-    private void OnEnable()
+    public class RetryMenu : MonoBehaviour
     {
-        PlayerHealth.OnPlayerDeath += EnableGameOverScreen;
-    }
+        public GameObject gameOverMenu;
 
-    private void OnDisable()
-    {
-        PlayerHealth.OnPlayerDeath -= EnableGameOverScreen;
-    }
+        private void OnEnable()
+        {
+            PlayerHealth.OnPlayerDeath += EnableGameOverScreen;
+        }
 
-    public void EnableGameOverScreen()
-    {
-        gameOverMenu.SetActive(true);
-        Time.timeScale = 0;
-    }
+        private void OnDisable()
+        {
+            PlayerHealth.OnPlayerDeath -= EnableGameOverScreen;
+        }
 
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
-    }
+        public void EnableGameOverScreen()
+        {
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
 
-    public void GoToMainMenu()
-    {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1;
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1;
+        }
+
+        public void GoToMainMenu()
+        {
+            SceneManager.LoadScene(0);
+            Time.timeScale = 1;
+        }
     }
 }

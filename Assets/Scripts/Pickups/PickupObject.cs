@@ -5,9 +5,6 @@ namespace Assets.Scripts.Pickups
 {
     public class PickupObject : MonoBehaviour
     {
-
-        private PlayerBonuses _playerBonuses = new ();
-    
         // Start is called before the first frame update
         void Start()
         {
@@ -18,13 +15,13 @@ namespace Assets.Scripts.Pickups
         // Update is called once per frame
         void Update()
         {
-        
         }
 
         private void OnCollisionEnter2D(Collision2D col)
         {
             if (!col.gameObject.CompareTag("Player")) return;
-            _playerBonuses.GainBonus(gameObject);
+            var playerBonuses = col.gameObject.GetComponent<PlayerBonuses>();
+            playerBonuses.GainBonus(gameObject);
             Destroy(gameObject);
         }
     }

@@ -1,30 +1,31 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-
-    public float movementSpeed = 5f;
-
-    public Rigidbody2D rb;
-    public Animator animator;
-
-    private Vector2 movement;
-
-    // Update is called once per frame
-    void Update()
+    public class PlayerMovement : MonoBehaviour
     {
-        // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        public float movementSpeed = 5f;
+        public Rigidbody2D rb;
+        public Animator animator;
+
+        private Vector2 movement;
+
+        // Update is called once per frame
+        void Update()
+        {
+            // Input
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
         
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-    }
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
 
-    private void FixedUpdate()
-    {
-        // Movement
-        rb.velocity = movement.normalized * movementSpeed;
+        private void FixedUpdate()
+        {
+            // Movement
+            rb.velocity = movement.normalized * movementSpeed;
+        }
     }
 }

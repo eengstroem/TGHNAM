@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemies
@@ -8,8 +9,6 @@ namespace Assets.Scripts.Enemies
         public int Health = 100;
         public GameObject ExperienceOrb;
 
-        private 
-    
         // Start is called before the first frame update
         void Start()
         {
@@ -29,8 +28,8 @@ namespace Assets.Scripts.Enemies
                 Die();
             }
         }
-    
-        void Die()
+
+        private void Die()
         {
             Instantiate(ExperienceOrb, transform.position, Quaternion.identity);
             Destroy(gameObject);
@@ -39,17 +38,17 @@ namespace Assets.Scripts.Enemies
         void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
-            {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
-            }
+                collision.gameObject
+                    .GetComponent<PlayerHealth>()
+                    .TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
         }
 
         void OnCollisionStay2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Player"))
-            {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
-            }
+                collision.gameObject
+                    .GetComponent<PlayerHealth>()
+                    .TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
         }
     }
 }

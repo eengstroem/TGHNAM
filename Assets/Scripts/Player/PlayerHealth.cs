@@ -1,69 +1,56 @@
 using System;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    //[SerializeField] private float maxHealth, currentHealth;
-    public static event Action OnPlayerDeath;
-    public float maxHealth;
-    public float currentHealth;
+    public class PlayerHealth : MonoBehaviour
+    {
+        public static event Action OnPlayerDeath;
+        public float maxHealth;
+        public float currentHealth;
 
-    public float collisionInvulnerabilityTime, projectileInvulnerabilityTime, miscInvulnerabilityTime = 0.1f;
-    private float collisionDamageTime, projectileDamageTime, miscDamageTime;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        currentHealth = maxHealth;
-    }
-    
-    public enum EDamageType
-    {
-        COLLISION,
-        PROJECTILE,
-        MISC
-    }
-
-    public void TakeDamage(int amount, EDamageType type)
-    {
-        float now = Time.time;
+        public float collisionInvulnerabilityTime, projectileInvulnerabilityTime, miscInvulnerabilityTime = 0.1f;
+        private float collisionDamageTime, projectileDamageTime, miscDamageTime;
         
-        switch (type) { 
-            case EDamageType.COLLISION:
-                if (now <= collisionDamageTime + collisionInvulnerabilityTime)
-                {
-                    return;
-                } else
-                {
-                    collisionDamageTime = now;
-                }
-                break;
-            case EDamageType.PROJECTILE:
-                if (now <= projectileDamageTime + projectileInvulnerabilityTime)
-                {
-                    return;
-                }
-                else
-                {
-                    collisionDamageTime = now;
-                }
-                break;
-            case EDamageType.MISC:
-                if (now <= miscDamageTime + miscInvulnerabilityTime)
-                {
-                    return;
-                }
-                else
-                {
-                    collisionDamageTime = now;
-                }
-                break;
+        // Start is called before the first frame update
+        void Start()
+        {
+            currentHealth = maxHealth;
+        }
+        
+        public enum EDamageType
+        {
+            COLLISION,
+            PROJECTILE,
+            MISC
         }
 
-        currentHealth -= amount;
-        
-        if (currentHealth <= 0)
+        public void TakeDamage(int amount, EDamageType type)
         {
+            var now = Time.time;
+            
+            switch (type) { 
+                case EDamageType.COLLISION:
+                    if (now <= collisionDamageTime + collisionInvulnerabilityTime)
+                        return;
+                    break;
+                case EDamageType.PROJECTILE:
+                    if (now <= projectileDamageTime + projectileInvulnerabilityTime)
+                        return;
+                    break;
+                case EDamageType.MISC:
+                    if (now <= miscDamageTime + miscInvulnerabilityTime)
+                        return;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
+            
+            collisionDamageTime = now;
+
+            currentHealth -= amount;
+
+            if (!(currentHealth <= 0)) return;
             currentHealth = 0;
             OnPlayerDeath?.Invoke();
         }
