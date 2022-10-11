@@ -19,7 +19,7 @@ namespace Assets.Scripts.Player
         // Update is called once per frame
         void Update()
         {
-            creditText.text = "Mom's Credits: " + _credits + "\n" + "Internet Mastery: " + _experience;
+            creditText.text = "Mom's Credits: " + _credits;
         }
 
         public void GainBonus(GameObject pickup)
