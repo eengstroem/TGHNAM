@@ -1,13 +1,12 @@
-using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemies
 {
     public class EnemyCore : MonoBehaviour
     {
-        public int damage = 10;
-        public int health = 100;
-        public GameObject experienceOrb;
+        public int Damage = 10;
+        public int Health = 100;
+        public GameObject ExperienceOrb;
     
         // Start is called before the first frame update
         void Start()
@@ -22,8 +21,8 @@ namespace Assets.Scripts.Enemies
     
         public void TakeDamage(int damageTaken)
         {
-            health -= damageTaken;
-            if (health <= 0)
+            Health -= damageTaken;
+            if (Health <= 0)
             {
                 Die();
             }
@@ -31,7 +30,7 @@ namespace Assets.Scripts.Enemies
     
         void Die()
         {
-            Instantiate(experienceOrb, transform.position, Quaternion.identity);
+            Instantiate(ExperienceOrb, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     
@@ -39,7 +38,7 @@ namespace Assets.Scripts.Enemies
         {
             if (collision.gameObject.tag == "Player")
             {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(Damage);
             }
         }
     }

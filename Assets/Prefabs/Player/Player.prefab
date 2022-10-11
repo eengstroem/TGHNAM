@@ -123,7 +123,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 2440412347625572981, guid: 1d73f6f34ae7700409425733249742ee, type: 3}
-  cooldown: 0.3
+  cooldown: 5
   shootingEnabled: 1
   mainCam: {fileID: 0}
   audioSource: {fileID: -3274503387517365181}

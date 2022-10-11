@@ -5,8 +5,8 @@ namespace Assets.Scripts.Projectiles
 {
     public class Projectile : MonoBehaviour
     {
-        public float speed = 20f;   // modified speed of the projectile
-        public float lifespan = 3f; // projectile's lifespan (in seconds)
+        public float speed = 10f;   // modified speed of the projectile
+        public float lifespan = 1f; // projectile's lifespan (in seconds)
         public Rigidbody2D m_Rigid;
 
         private const float BaseSpeed = 10f; // base speed of the projectile
