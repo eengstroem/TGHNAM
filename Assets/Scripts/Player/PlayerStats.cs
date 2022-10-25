@@ -10,6 +10,8 @@ namespace Assets.Scripts.Player
         public float expToNextLevel = 10;
         public float credits = 0;
         public int damage = 25;
+        public float fireRate = 0.3f;
+        
         [SerializeField] public TextMeshProUGUI creditText;
 
         void Update()

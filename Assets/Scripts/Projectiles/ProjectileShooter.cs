@@ -1,3 +1,4 @@
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Projectiles
@@ -5,7 +6,6 @@ namespace Assets.Scripts.Projectiles
     public class ProjectileShooter : MonoBehaviour
     {
         public GameObject projectile; //reference to prefab that will be spawned
-        public float cooldown = 100000; //time required before next shot being fired
         public bool shootingEnabled = true; //Are you allowed to shoot?
         public UnityEngine.Camera mainCam;
         public AudioSource audioSource;
@@ -20,7 +20,8 @@ namespace Assets.Scripts.Projectiles
         // Update is called once per frame
         void Update()
         {
-            if (shootingEnabled && Time.time >= lastShot + cooldown && Input.GetMouseButton(0))
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (shootingEnabled && Time.time >= lastShot + player.GetComponent<PlayerStats>().fireRate && Input.GetMouseButton(0))
             {
                 Debug.DrawLine(Input.mousePosition, transform.position);
                 var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
