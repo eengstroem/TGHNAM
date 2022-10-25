@@ -1,5 +1,4 @@
 using Assets.Scripts.Enemies;
-using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Projectiles
@@ -9,6 +8,7 @@ namespace Assets.Scripts.Projectiles
         public float speed = 10f;   // modified speed of the projectile
         public float lifespan = 1f; // projectile's lifespan (in seconds)
         public Rigidbody2D m_Rigid;
+        public int damage = 1;   // damage dealt to the enemy
 
         private const float BaseSpeed = 10f; // base speed of the projectile
 
@@ -41,10 +41,7 @@ namespace Assets.Scripts.Projectiles
                 case "Player":
                     return;
                 case "Enemy":
-                    var player = GameObject.FindGameObjectWithTag("Player");
-                    collision.gameObject
-                        .GetComponent<EnemyCore>()
-                        .TakeDamage(player.GetComponent<PlayerStats>().damage);
+                    collision.gameObject.GetComponent<EnemyCore>().TakeDamage(damage);
                     Destroy(gameObject);
                     return;
                 default:

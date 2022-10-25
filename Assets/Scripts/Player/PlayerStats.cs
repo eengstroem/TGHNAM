@@ -9,8 +9,11 @@ namespace Assets.Scripts.Player
         public float exp = 0;
         public float expToNextLevel = 10;
         public float credits = 0;
+        
         public int damage = 25;
         public float fireRate = 0.3f;
+        public int numProjectiles = 1;
+        public float projectileSpeed = 30f;
         
         [SerializeField] public TextMeshProUGUI creditText;
 

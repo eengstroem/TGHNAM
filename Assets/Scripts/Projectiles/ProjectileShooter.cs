@@ -20,20 +20,26 @@ namespace Assets.Scripts.Projectiles
         // Update is called once per frame
         void Update()
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
-            if (shootingEnabled && Time.time >= lastShot + player.GetComponent<PlayerStats>().fireRate && Input.GetMouseButton(0))
+            var playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
+            if (!shootingEnabled || !(Time.time >= lastShot + playerStats.fireRate) || !Input.GetMouseButton(0)) return;
+            
+            var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            var relativePos = mousePos - transform.position;
+            var angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
+            var numProjectiles = playerStats.numProjectiles;
+
+            var angleStep = 120 / numProjectiles;
+            
+            for (var i = 0; i < numProjectiles; i++)
             {
-                Debug.DrawLine(Input.mousePosition, transform.position);
-                var mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 relativePos = mousePos - transform.position;
-                float angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
-                var rotation = Quaternion.Euler(0,0, angle+90);
-
-
-                Instantiate(projectile, transform.position, rotation);
-                audioSource.PlayOneShot(audioSource.clip);
-                lastShot = Time.time;
+                var rotation = Quaternion.Euler(0, 0, angle + 45 + angleStep * i);
+                var projectileInstance = Instantiate(projectile, transform.position, rotation);
+                projectileInstance.GetComponent<Projectile>().damage = playerStats.damage;
+                projectileInstance.GetComponent<Projectile>().speed = playerStats.projectileSpeed;
             }
+                
+            audioSource.PlayOneShot(audioSource.clip);
+            lastShot = Time.time;
         }
     }
 }

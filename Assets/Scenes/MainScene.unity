@@ -877,6 +877,8 @@ MonoBehaviour:
   credits: 0
   damage: 25
   fireRate: 0.3
+  numProjectiles: 5
+  projectileSpeed: 30
   creditText: {fileID: 381684943}
 --- !u!114 &956634834
 MonoBehaviour:
