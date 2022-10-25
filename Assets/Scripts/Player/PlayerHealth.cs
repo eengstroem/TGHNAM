@@ -8,6 +8,7 @@ namespace Assets.Scripts.Player
         public static event Action OnPlayerDeath;
         public float maxHealth;
         public float currentHealth;
+        public float healthRegen = 1f;
 
         public float collisionInvulnerabilityTime, projectileInvulnerabilityTime, miscInvulnerabilityTime = 0.1f;
         private float collisionDamageTime, projectileDamageTime, miscDamageTime;
@@ -16,6 +17,11 @@ namespace Assets.Scripts.Player
         void Start()
         {
             currentHealth = maxHealth;
+        }
+
+        void Update()
+        {
+            currentHealth += healthRegen * Time.deltaTime;
         }
         
         public enum EDamageType
