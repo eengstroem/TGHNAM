@@ -11,6 +11,7 @@ namespace Assets.Scripts.UI
         private Slider _experienceSlider;
         private PlayerHealth _playerHealth;
         private PlayerStats _playerExperience;
+        private 
 
         // Start is called before the first frame update
         void Awake()

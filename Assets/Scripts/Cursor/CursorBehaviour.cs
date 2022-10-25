@@ -10,13 +10,12 @@ namespace Assets.Scripts.Cursor
         // Start is called before the first frame update
         void Start()
         {
-            UnityEngine.Cursor.SetCursor(crosshairTexture, new(crosshairTexture.width / 2, crosshairTexture.height / 2), CursorMode.Auto);
+            UnityEngine.Cursor.SetCursor(crosshairTexture, new Vector2((float)crosshairTexture.width / 2, (float)crosshairTexture.height / 2), CursorMode.Auto);
         }
 
         // Update is called once per frame
         void Update()
         {
-        
         }
     }
 }

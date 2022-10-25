@@ -5,8 +5,9 @@ namespace Assets.Scripts.Enemies
 {
     public class EnemyCore : MonoBehaviour
     {
+        private bool _dead = false;
         public int Damage = 10;
-        public int Health = 100;
+        public float Health = 100f;
         public GameObject ExperienceOrb;
 
         // Start is called before the first frame update
@@ -20,10 +21,10 @@ namespace Assets.Scripts.Enemies
         {
         }
     
-        public void TakeDamage(int damageTaken)
+        public void TakeDamage(float damageTaken)
         {
             Health -= damageTaken;
-            if (Health <= 0)
+            if (Health <= 0 && !_dead)
             {
                 Die();
             }
@@ -31,6 +32,7 @@ namespace Assets.Scripts.Enemies
 
         private void Die()
         {
+            _dead = true;
             Instantiate(ExperienceOrb, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

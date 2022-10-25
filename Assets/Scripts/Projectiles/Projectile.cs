@@ -8,7 +8,7 @@ namespace Assets.Scripts.Projectiles
         public float speed = 10f;   // modified speed of the projectile
         public float lifespan = 1f; // projectile's lifespan (in seconds)
         public Rigidbody2D m_Rigid;
-        public int damage = 1;   // damage dealt to the enemy
+        public float damage = 1;   // damage dealt to the enemy
 
         private const float BaseSpeed = 10f; // base speed of the projectile
 
