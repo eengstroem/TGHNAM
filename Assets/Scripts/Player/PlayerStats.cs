@@ -9,6 +9,7 @@ namespace Assets.Scripts.Player
         public float exp = 0;
         public float expToNextLevel = 10;
         public float credits = 0;
+        public int damage = 25;
         [SerializeField] public TextMeshProUGUI creditText;
 
         void Update()

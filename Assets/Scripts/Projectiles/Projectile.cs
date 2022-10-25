@@ -1,4 +1,5 @@
 using Assets.Scripts.Enemies;
+using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Projectiles
@@ -43,7 +44,10 @@ namespace Assets.Scripts.Projectiles
                 case "Player":
                     return;
                 case "Enemy":
-                    collision.gameObject.GetComponent<EnemyCore>().TakeDamage(25);
+                    var player = GameObject.FindGameObjectWithTag("Player");
+                    collision.gameObject
+                        .GetComponent<EnemyCore>()
+                        .TakeDamage(player.GetComponent<PlayerStats>().damage);
                     Destroy(gameObject);
                     return;
                 default:
