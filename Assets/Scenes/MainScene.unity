@@ -875,6 +875,8 @@ MonoBehaviour:
   exp: 0
   expToNextLevel: 10
   credits: 0
+  damage: 25
+  fireRate: 0.3
   creditText: {fileID: 381684943}
 --- !u!114 &956634834
 MonoBehaviour:
@@ -3765,6 +3767,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: healthRegen
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: miscInvulnerabilityTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: collisionInvulnerabilityTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: projectileInvulnerabilityTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3274503387517365181, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3831,4 +3849,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6136603107333360459, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+    - {fileID: 1676277615748522588, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}

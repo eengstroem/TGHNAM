@@ -15,12 +15,10 @@ GameObject:
   - component: {fileID: -8896007891997523039}
   - component: {fileID: -3013537800035073473}
   - component: {fileID: 2936006183867225440}
-  - component: {fileID: 1676277615748522588}
   - component: {fileID: -4403418230378947904}
   - component: {fileID: -3274503387517365181}
   - component: {fileID: 4740901591280682703}
   - component: {fileID: 2398683724937556707}
-  - component: {fileID: 6136603107333360459}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -145,7 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 2440412347625572981, guid: 1d73f6f34ae7700409425733249742ee, type: 3}
-  cooldown: 0.3
   shootingEnabled: 1
   mainCam: {fileID: 0}
   audioSource: {fileID: -3274503387517365181}
@@ -174,20 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c926c89172c514344967c48b8d4a69ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditText: {fileID: 0}
---- !u!114 &1676277615748522588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801454778154853127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7d0df97b9a6d174fb261d58c4bc1032, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
 --- !u!114 &-4403418230378947904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+  healthRegen: 1
   collisionInvulnerabilityTime: 0
   projectileInvulnerabilityTime: 0
   miscInvulnerabilityTime: 0.1
@@ -336,17 +320,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6136603107333360459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801454778154853127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4dcd1bdf8cc1241b4def0cf386691b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exp: 0
-  expToNextLevel: 10

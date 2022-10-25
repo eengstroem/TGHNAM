@@ -30,9 +30,6 @@ namespace Assets.Scripts.Projectiles
 
         void Update()
         {
-            //transform.position += forward * speed * Time.deltaTime;
-            Debug.Log("Velocity: " + m_Rigid.velocity);
-            Debug.Log("Velocity magnitude: " + m_Rigid.velocity.magnitude);
         }
     
         void OnCollisionEnter2D(Collision2D collision)
