@@ -154,3 +154,4 @@ MonoBehaviour:
   Damage: 10
   Health: 100
   ExperienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}
+  damageTextPrefab: {fileID: 5216742579489031435, guid: f08ac3885801c9d4f906ca2649deba34, type: 3}
