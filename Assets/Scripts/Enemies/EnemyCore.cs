@@ -1,3 +1,4 @@
+using System.Globalization;
 using Assets.Scripts.Player;
 using TMPro;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Assets.Scripts.Enemies
         public int Damage = 10;
         public float Health = 100f;
         public GameObject ExperienceOrb;
-        [SerializeField] private GameObject damageTextPrefab;
+        public DamagePopup damagePopup;
 
         // Start is called before the first frame update
         void Start()
@@ -25,7 +26,7 @@ namespace Assets.Scripts.Enemies
     
         public void TakeDamage(float damageTaken)
         {
-            ShowDamage(damageTaken.ToString());
+            damagePopup.ShowDamage(damageTaken.ToString());
             Health -= damageTaken;
             if (Health <= 0 && !_dead)
             {
@@ -54,15 +55,6 @@ namespace Assets.Scripts.Enemies
                 collision.gameObject
                     .GetComponent<PlayerHealth>()
                     .TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
-        }
-
-        void ShowDamage(string text)
-        {
-            if (damageTextPrefab)
-            {
-                GameObject prefab = Instantiate(damageTextPrefab, transform.position, Quaternion.identity);
-                prefab.GetComponentInChildren<TextMeshPro>().text = text;
-            }
         }
     }
 }

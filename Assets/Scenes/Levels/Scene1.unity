@@ -1013,7 +1013,7 @@ MonoBehaviour:
   credits: 0
   damage: 25
   fireRate: 0.3
-  numProjectiles: 5
+  numProjectiles: 2
   projectileSpeed: 30
   creditText: {fileID: 381684943}
   levelText: {fileID: 78534907}
@@ -3612,6 +3612,22 @@ PrefabInstance:
       propertyPath: damage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0186946
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3385816
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.03298986
+      objectReference: {fileID: 0}
+    - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.06393337
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7354996827581260159, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
@@ -3943,8 +3959,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 381684943}
     - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0738351
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Size.y
+      value: 1.3135455
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.009182811
+      objectReference: {fileID: 0}
+    - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10756922
       objectReference: {fileID: 0}
     - target: {fileID: 8604478372545700033, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
       propertyPath: m_RootOrder
