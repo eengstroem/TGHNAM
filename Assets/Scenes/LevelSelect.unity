@@ -130,9 +130,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132123903}
     m_Modifications:
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: level
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1872156790429553974, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Name
-      value: LevelSelector (1)
+      value: LevelSelector_level2
       objectReference: {fileID: 0}
     - target: {fileID: 1872156790429553975, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Pivot.x
@@ -236,9 +240,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132123903}
     m_Modifications:
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1872156790429553974, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Name
-      value: LevelSelector
+      value: LevelSelector_level1
       objectReference: {fileID: 0}
     - target: {fileID: 1872156790429553975, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Pivot.x
