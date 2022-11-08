@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: level
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 1801442614}
     - target: {fileID: 1872156790429553974, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Name
       value: LevelSelector_level2
@@ -244,6 +248,10 @@ PrefabInstance:
       propertyPath: level
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 542044503}
     - target: {fileID: 1872156790429553974, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Name
       value: LevelSelector_level1
@@ -343,6 +351,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1872156790429553975, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
   m_PrefabInstance: {fileID: 166394219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &542044503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1872156791257329142, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+  m_PrefabInstance: {fileID: 166394219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907391194
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,9 +437,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1132123903}
     m_Modifications:
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872156790429553971, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+      propertyPath: levelText
+      value: 
+      objectReference: {fileID: 1593082304}
     - target: {fileID: 1872156790429553974, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Name
-      value: LevelSelector (2)
+      value: LevelSelector_level3
       objectReference: {fileID: 0}
     - target: {fileID: 1872156790429553975, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
       propertyPath: m_Pivot.x
@@ -581,6 +608,28 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1593082304 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1872156791257329142, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+  m_PrefabInstance: {fileID: 1079198078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1801442614 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1872156791257329142, guid: f09f9039c35252844adcf24f8e0ee4ed, type: 3}
+  m_PrefabInstance: {fileID: 104152813}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1821855703
 GameObject:
   m_ObjectHideFlags: 0
