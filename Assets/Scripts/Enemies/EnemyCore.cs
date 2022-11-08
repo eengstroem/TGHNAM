@@ -7,6 +7,8 @@ namespace Assets.Scripts.Enemies
 {
     public class EnemyCore : MonoBehaviour
     {
+        [SerializeField]
+        private bool CanTakeDamage;
         private bool _dead = false;
         public int Damage = 10;
         public float Health = 100f;
@@ -26,11 +28,18 @@ namespace Assets.Scripts.Enemies
     
         public void TakeDamage(float damageTaken)
         {
+            if (CanTakeDamage == true)
+            {
             damagePopup.ShowDamage(damageTaken.ToString());
             Health -= damageTaken;
             if (Health <= 0 && !_dead)
             {
                 Die();
+            }
+            }
+            else
+            {
+                
             }
         }
 
