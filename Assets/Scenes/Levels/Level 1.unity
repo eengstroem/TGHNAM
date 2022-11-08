@@ -832,7 +832,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.8338895
+  orthographic size: 6.652333
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -876,6 +876,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 956634832}
+  followTransform: {fileID: 956634855}
+  mapBounds: {fileID: 1597704155}
 --- !u!1 &622085170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1050,7 @@ Transform:
   m_GameObject: {fileID: 752449806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1.4, z: 1.5}
+  m_LocalScale: {x: 4, y: 4, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1597704152}
@@ -1148,6 +1150,8 @@ MonoBehaviour:
   fireRate: 0.3
   numProjectiles: 2
   projectileSpeed: 30
+  critChance: 0.05
+  critMultiplier: 2
   creditText: {fileID: 381684943}
   levelText: {fileID: 78534907}
 --- !u!114 &956634834
@@ -1175,6 +1179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb3843dab35ee04ca5de3378acc9da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &956634855 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8604478372545700033, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+  m_PrefabInstance: {fileID: 2112890282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &957581622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1888,6 +1897,7 @@ GameObject:
   - component: {fileID: 1597704152}
   - component: {fileID: 1597704154}
   - component: {fileID: 1597704153}
+  - component: {fileID: 1597704155}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -3701,6 +3711,32 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!68 &1597704155
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597704151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 6.9846225, y: 5.9876747}
+  - {x: 7.009456, y: -5.985118}
+  - {x: 4.758402, y: -5.9401374}
+  - {x: -6.9594073, y: -5.890331}
+  - {x: -7.0147777, y: 5.965902}
+  - {x: 6.9203153, y: 6.031223}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1668852819
 GameObject:
   m_ObjectHideFlags: 0
