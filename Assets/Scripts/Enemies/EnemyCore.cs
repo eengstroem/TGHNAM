@@ -26,10 +26,10 @@ namespace Assets.Scripts.Enemies
     
         public void TakeDamage(float damageTaken)
         {
-            var player = GameObject.FindWithTag("Player");
-            var isCrit = random.NextDouble() < player.GetComponent<PlayerStats>().critChance;
+            var playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+            var isCrit = random.NextDouble() < playerStats.critChance;
             
-            damageTaken = isCrit ? damageTaken * 2 : damageTaken;
+            damageTaken = isCrit ? damageTaken * playerStats.critMultiplier : damageTaken;
             
             damagePopup.ShowDamage(damageTaken.ToString(), isCrit);
             Health -= damageTaken;
