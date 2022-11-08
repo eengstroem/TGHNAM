@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +5,7 @@ public class DamagePopup : MonoBehaviour
 {
     [SerializeField] private GameObject damageTextPrefab;
     
-    public void ShowDamage(string text)
+    public void ShowDamage(string text, bool isCrit)
     {
         if (damageTextPrefab)
         {
