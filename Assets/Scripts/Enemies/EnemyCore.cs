@@ -1,7 +1,6 @@
-using System.Globalization;
 using Assets.Scripts.Player;
-using TMPro;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Assets.Scripts.Enemies
 {
@@ -12,6 +11,7 @@ namespace Assets.Scripts.Enemies
         public float Health = 100f;
         public GameObject ExperienceOrb;
         public DamagePopup damagePopup;
+        private Random random = new Random();
 
         // Start is called before the first frame update
         void Start()
@@ -26,7 +26,12 @@ namespace Assets.Scripts.Enemies
     
         public void TakeDamage(float damageTaken)
         {
-            damagePopup.ShowDamage(damageTaken.ToString());
+            var player = GameObject.FindWithTag("Player");
+            var isCrit = random.NextDouble() < player.GetComponent<PlayerStats>().critChance;
+            
+            damageTaken = isCrit ? damageTaken * 2 : damageTaken;
+            
+            damagePopup.ShowDamage(damageTaken.ToString(), isCrit);
             Health -= damageTaken;
             if (Health <= 0 && !_dead)
             {

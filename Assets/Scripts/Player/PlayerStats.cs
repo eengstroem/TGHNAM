@@ -14,6 +14,8 @@ namespace Assets.Scripts.Player
         public float fireRate = 0.3f;
         public int numProjectiles = 1;
         public float projectileSpeed = 30f;
+        public float critChance = 0.05f; 
+        public float critMultiplier = 2f;
         
         [SerializeField] public TextMeshProUGUI creditText;
         [SerializeField] public TextMeshProUGUI levelText;
