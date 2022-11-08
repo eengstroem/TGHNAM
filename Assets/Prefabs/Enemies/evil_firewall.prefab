@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1409070691386823554}
   - component: {fileID: 5029801050172580000}
   - component: {fileID: -712732640226453634}
-  - component: {fileID: 7077715619031377023}
   m_Layer: 6
   m_Name: evil_firewall
   m_TagString: Enemy
@@ -152,17 +151,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.588488, y: 3.588328}
   m_EdgeRadius: 0
---- !u!114 &7077715619031377023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3117504342161984180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eb85b648e31be34b8f71d494e44ffcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  rb: {fileID: 1409070691386823554}
