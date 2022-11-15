@@ -9,12 +9,17 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private bool CanTakeDamage;
         private bool _dead = false;
-        public int Damage = 10;
+        public int damage = 10;
         public float Health = 100f;
         public GameObject ExperienceOrb;
         public DamagePopup damagePopup;
         private Random random = new Random();
         public FlashRed flashRed;
+
+        //Enemy shooting stats and stuff
+        public float fireRate;
+        public float numProjectiles;
+        public float projectileSpeed;
 
         // Start is called before the first frame update
         void Start()
@@ -59,7 +64,7 @@ namespace Assets.Scripts.Enemies
             if (collision.gameObject.CompareTag("Player"))
                 collision.gameObject
                     .GetComponent<PlayerHealth>()
-                    .TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
+                    .TakeDamage(damage, PlayerHealth.EDamageType.COLLISION);
         }
 
         void OnCollisionStay2D(Collision2D collision)
@@ -67,7 +72,7 @@ namespace Assets.Scripts.Enemies
             if (collision.gameObject.CompareTag("Player"))
                 collision.gameObject
                     .GetComponent<PlayerHealth>()
-                    .TakeDamage(Damage, PlayerHealth.EDamageType.COLLISION);
+                    .TakeDamage(damage, PlayerHealth.EDamageType.COLLISION);
         }
     }
 }

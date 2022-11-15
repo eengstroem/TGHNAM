@@ -51,6 +51,7 @@ MonoBehaviour:
   lifespan: 3
   m_Rigid: {fileID: 6279522490290665583}
   damage: 1
+  isFriendly: 0
 --- !u!212 &2451001070246628582
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,7 +114,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.030296326, y: -0.6844368}
