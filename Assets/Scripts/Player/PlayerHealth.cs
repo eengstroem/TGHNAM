@@ -24,7 +24,7 @@ namespace Assets.Scripts.Player
         {
             if(currentHealth < maxHealth)
             {
-                currentHealth += healthRegen * Time.deltaTime;
+                // currentHealth += healthRegen * Time.deltaTime;
             }
         }
         

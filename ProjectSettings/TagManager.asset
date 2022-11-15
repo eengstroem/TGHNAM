@@ -10,6 +10,8 @@ TagManager:
   - Experience
   - PlayerHealthBar
   - PlayerExperienceBar
+  - Health
+  - LootChest
   layers:
   - Default
   - TransparentFX
