@@ -27,11 +27,7 @@ namespace Assets.Scripts.Projectiles
         
             Destroy(gameObject, lifespan);
         }
-
-        void Update()
-        {
-        }
-    
+        
         void OnCollisionEnter2D(Collision2D collision)
         {
             switch (collision.gameObject.tag)

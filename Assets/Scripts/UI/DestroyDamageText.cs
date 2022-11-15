@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Mono.CompilerServices.SymbolWriter;
 using UnityEngine;
 
 public class DestroyDamageText : MonoBehaviour

@@ -17,12 +17,13 @@ namespace Assets.Scripts.Pickups
         {
         }
 
-        private void OnCollisionEnter2D(Collision2D col)
+        private void OnTriggerEnter2D(Collider2D col)
         {
+            var objectTag = gameObject.tag;
+            Destroy(gameObject);
             if (!col.gameObject.CompareTag("Player")) return;
             var playerBonuses = col.gameObject.GetComponent<PlayerBonuses>();
-            playerBonuses.GainBonus(gameObject);
-            Destroy(gameObject);
+            playerBonuses.GainBonus(objectTag);
         }
     }
 }

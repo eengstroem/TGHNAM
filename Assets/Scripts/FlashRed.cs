@@ -11,7 +11,4 @@ public class FlashRed : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         sprite.color = Color.white;
     }
-
-
-
 }

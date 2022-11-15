@@ -14,10 +14,10 @@ namespace Assets.Scripts.Player
         {
         }
 
-        public void GainBonus(GameObject pickup)
+        public void GainBonus(string pickupTag)
         {
             var player = GameObject.FindWithTag("Player");
-            switch (pickup.tag)
+            switch (pickupTag)
             {
                 case "CreditCard":
                     player.GetComponent<PlayerStats>().AddCredits(1);

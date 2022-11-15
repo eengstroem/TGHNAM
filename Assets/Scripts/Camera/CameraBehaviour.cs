@@ -6,25 +6,23 @@ namespace Assets.Scripts.Camera
     public class CameraBehaviour : MonoBehaviour
     {
         public PlayerMovement player;
-        private float xMin, xMax, yMin, yMax;
-        private float camX, camY;
-        private float camOrthSize;
-        private float screenAspect;
-        private float cameraRatio;
-        private UnityEngine.Camera mainCamera;
+        private float _xMin, _xMax, _yMin, _yMax;
+        private float _camX, _camY;
+        private float _camOrthSize;
+        private float _screenAspect;
+        private UnityEngine.Camera _mainCamera;
         
         public Transform followTransform;
         public EdgeCollider2D mapBounds;
         // Start is called before the first frame update
         void Start()
         {
-            xMin = mapBounds.bounds.min.x;
-            yMin = mapBounds.bounds.min.y;
-            xMax = mapBounds.bounds.max.x;
-            yMax = mapBounds.bounds.max.y;
-            mainCamera = GetComponent<UnityEngine.Camera>();
-            camOrthSize = mainCamera.orthographicSize;
-            cameraRatio = (xMax + camOrthSize) / 2.0f;
+            _xMin = mapBounds.bounds.min.x;
+            _yMin = mapBounds.bounds.min.y;
+            _xMax = mapBounds.bounds.max.x;
+            _yMax = mapBounds.bounds.max.y;
+            _mainCamera = GetComponent<UnityEngine.Camera>();
+            _camOrthSize = _mainCamera.orthographicSize;
         }
         
         // // Update is called once per frame
@@ -35,10 +33,9 @@ namespace Assets.Scripts.Camera
         
         private void FixedUpdate()
         {
-            camY = Mathf.Clamp(followTransform.position.y, yMin + camOrthSize, yMax - camOrthSize);
-            camX = Mathf.Clamp(followTransform.position.x, xMin + camOrthSize, xMax - camOrthSize);
-            this.transform.position = new Vector3(camX, camY,
-                this.transform.position.z);
+            _camY = Mathf.Clamp(followTransform.position.y, _yMin + _camOrthSize, _yMax - _camOrthSize);
+            _camX = Mathf.Clamp(followTransform.position.x, _xMin + _camOrthSize, _xMax - _camOrthSize);
+            transform.position = new Vector3(_camX, _camY, transform.position.z);
         }
     }
 }

@@ -10,7 +10,7 @@ public class DamagePopup : MonoBehaviour
     {
         if (criticalDamageTextPrefab && normalDamageTextPrefab)
         {
-            GameObject prefab = Instantiate((isCrit ? criticalDamageTextPrefab : normalDamageTextPrefab), transform.position, Quaternion.identity);
+            var prefab = Instantiate(isCrit ? criticalDamageTextPrefab : normalDamageTextPrefab, transform.position, Quaternion.identity);
             prefab.GetComponentInChildren<TextMeshPro>().text = text;
         }
     }

@@ -20,6 +20,10 @@ GameObject:
   - component: {fileID: 4740901591280682703}
   - component: {fileID: 2398683724937556707}
   - component: {fileID: 8326044301106404244}
+  - component: {fileID: 6374645370206207691}
+  - component: {fileID: 5834253662770638646}
+  - component: {fileID: 8624389699862588054}
+  - component: {fileID: 9139891674998083486}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,3 +339,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 5794937433709969525}
+--- !u!114 &6374645370206207691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801454778154853127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a8552cfa11c0b438c7e0569a7f8eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+  expToNextLevel: 10
+  credits: 0
+  damage: 25
+  fireRate: 0.3
+  numProjectiles: 3
+  projectileSpeed: 30
+  critChance: 0.05
+  critMultiplier: 2
+  creditText: {fileID: 0}
+  levelText: {fileID: 0}
+--- !u!114 &5834253662770638646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801454778154853127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2216683d5527e1479b41e9c2d84ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
+--- !u!114 &8624389699862588054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801454778154853127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a8552cfa11c0b438c7e0569a7f8eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  exp: 0
+  expToNextLevel: 10
+  credits: 0
+  damage: 25
+  fireRate: 0.3
+  numProjectiles: 3
+  projectileSpeed: 30
+  critChance: 0.05
+  critMultiplier: 2
+  creditText: {fileID: 0}
+  levelText: {fileID: 0}
+--- !u!114 &9139891674998083486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801454778154853127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2216683d5527e1479b41e9c2d84ffad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
