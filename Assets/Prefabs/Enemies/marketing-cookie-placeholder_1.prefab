@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6928143041232744021}
   - component: {fileID: 5029801050172580000}
   - component: {fileID: 6398717076155286228}
+  - component: {fileID: 7656289714380812919}
   m_Layer: 6
   m_Name: marketing-cookie-placeholder_1
   m_TagString: Enemy
@@ -157,6 +158,7 @@ MonoBehaviour:
   Health: 100
   ExperienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}
   damagePopup: {fileID: 6398717076155286228}
+  flashRed: {fileID: 7656289714380812919}
 --- !u!114 &6398717076155286228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +173,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalDamageTextPrefab: {fileID: 5216742579489031435, guid: f08ac3885801c9d4f906ca2649deba34, type: 3}
   criticalDamageTextPrefab: {fileID: 5216742579489031435, guid: e0a8dd06e63fe4a4a862578d5c75e1db, type: 3}
+--- !u!114 &7656289714380812919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3117504342161984180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26b72321e144faf8870add448299994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 3117504342161984182}

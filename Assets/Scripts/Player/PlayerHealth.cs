@@ -9,6 +9,7 @@ namespace Assets.Scripts.Player
         public float maxHealth;
         public float currentHealth;
         public float healthRegen = 1f;
+        public FlashRed flashRed;
 
         public float collisionInvulnerabilityTime, projectileInvulnerabilityTime, miscInvulnerabilityTime = 0.1f;
         private float _collisionDamageTime, _projectileDamageTime, _miscDamageTime;
@@ -57,7 +58,9 @@ namespace Assets.Scripts.Player
             
             _collisionDamageTime = now;
 
+            
             currentHealth -= amount;
+            StartCoroutine(flashRed.TakeDamageFlashRed());
 
             if (!(currentHealth <= 0)) return;
             currentHealth = 0;

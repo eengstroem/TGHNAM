@@ -1286,6 +1286,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8604478372545700033, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
   m_PrefabInstance: {fileID: 2112890282}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &956634864 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5794937433709969525, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+  m_PrefabInstance: {fileID: 2112890282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &957581622
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3997,6 +4002,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -712732640226453634, guid: 5a14126fb20ec8f4c90bae168e85e676, type: 3}
+      propertyPath: m_Size.y
+      value: 3.2403436
+      objectReference: {fileID: 0}
+    - target: {fileID: -712732640226453634, guid: 5a14126fb20ec8f4c90bae168e85e676, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08130336
+      objectReference: {fileID: 0}
     - target: {fileID: 3117504342161984180, guid: 5a14126fb20ec8f4c90bae168e85e676, type: 3}
       propertyPath: m_Name
       value: evil_firewall (2)
@@ -4112,7 +4125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_Size.x
-      value: 1.0186946
+      value: 1.114824
       objectReference: {fileID: 0}
     - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_Size.y
@@ -4120,7 +4133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.03298986
+      value: -0.013764262
       objectReference: {fileID: 0}
     - target: {fileID: 6928143041232744021, guid: 62cb9c002e753414ab0db9b23eef15d4, type: 3}
       propertyPath: m_Offset.y
@@ -4535,6 +4548,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 956634864}
+    - target: {fileID: -4403418230378947904, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
       propertyPath: healthRegen
       value: 5
       objectReference: {fileID: 0}
@@ -4570,6 +4587,18 @@ PrefabInstance:
       propertyPath: creditText
       value: 
       objectReference: {fileID: 381684943}
+    - target: {fileID: 5794937433709969525, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794937433709969525, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5794937433709969525, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6372258515019532950, guid: 660ae20412f5f4046b73e3f582f664ea, type: 3}
       propertyPath: m_Size.x
       value: 1.0738351

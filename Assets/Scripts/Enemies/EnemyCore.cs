@@ -14,6 +14,7 @@ namespace Assets.Scripts.Enemies
         public GameObject ExperienceOrb;
         public DamagePopup damagePopup;
         private Random random = new Random();
+        public FlashRed flashRed;
 
         // Start is called before the first frame update
         void Start()
@@ -34,7 +35,8 @@ namespace Assets.Scripts.Enemies
                 var isCrit = random.NextDouble() < playerStats.critChance;
 
                 damageTaken = isCrit ? damageTaken * playerStats.critMultiplier : damageTaken;
-
+                
+                StartCoroutine(flashRed.TakeDamageFlashRed());
                 damagePopup.ShowDamage(damageTaken.ToString(), isCrit);
                 Health -= damageTaken;
                 if (Health <= 0 && !_dead)
