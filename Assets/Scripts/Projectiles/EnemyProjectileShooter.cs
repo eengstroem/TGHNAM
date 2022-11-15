@@ -28,20 +28,14 @@ namespace Assets.Scripts.Projectiles
             var playerPos = player.transform.position;
             var relativePos = playerPos - transform.position;
             var angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
-            var numProjectiles = enemyStats.numProjectiles;
-
-            var angleStep = 120 / numProjectiles;
             
-            for (var i = 0; i < numProjectiles; i++)
-            {
-                var rotation = Quaternion.Euler(0, 0, angle + 45 + angleStep * i);
+                var rotation = Quaternion.Euler(0, 0, angle + 90);
                 var projectileInstance = Instantiate(projectile, transform.position, rotation);
                 projectileInstance.GetComponent<Projectile>().damage = enemyStats.damage;
                 projectileInstance.GetComponent<Projectile>().speed = enemyStats.projectileSpeed;
                 projectileInstance.GetComponent<Projectile>().isFriendly = false;
-            }
-                
-            audioSource.PlayOneShot(audioSource.clip);
+
+                audioSource.PlayOneShot(audioSource.clip);
             lastShot = Time.time;
         }
     }
