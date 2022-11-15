@@ -10,7 +10,7 @@ public class LevelSelectScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelText.text = level.ToString();
+        levelText.text = "Level" + level.ToString();
     }
 
     public void OpenScene()
