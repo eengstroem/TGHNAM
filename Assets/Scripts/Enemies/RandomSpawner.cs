@@ -8,7 +8,7 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         public GameObject enemyPrefabs;
 
-        [SerializeField] private const float SpawnInterval = 4.0f;
+        [SerializeField] private float SpawnInterval = 4.0f;
         Renderer m_Renderer;
         void Start()
         {

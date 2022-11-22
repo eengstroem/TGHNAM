@@ -8,6 +8,7 @@ namespace Assets.Scripts.Projectiles
     {
         public GameObject projectile; //reference to prefab that will be spawned
         public bool shootingEnabled = true; //Are you allowed to shoot?
+        public float lifespan = 1f;
         public UnityEngine.Camera mainCam;
         public AudioSource audioSource;
     
@@ -37,6 +38,7 @@ namespace Assets.Scripts.Projectiles
                 var projectileInstance = Instantiate(projectile, transform.position, rotation);
                 projectileInstance.GetComponent<Projectile>().damage = playerStats.damage;
                 projectileInstance.GetComponent<Projectile>().speed = playerStats.projectileSpeed;
+                projectileInstance.GetComponent<Projectile>().lifespan = lifespan;
                 projectileInstance.GetComponent<Projectile>().isFriendly = true;
             }
                 

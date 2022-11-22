@@ -50,7 +50,6 @@ namespace Assets.Scripts.Projectiles
                     }
                     return;
                 default:
-                    Debug.Log("Collision");
                     Destroy(gameObject);
                     break;
             }
