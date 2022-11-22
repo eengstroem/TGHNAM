@@ -13,6 +13,8 @@ namespace Assets.Scripts.Projectiles
         public AudioSource audioSource;
     
         private float lastShot;
+        
+        private PlayerStats playerStats;
     
         private void Awake()
         {
@@ -29,19 +31,33 @@ namespace Assets.Scripts.Projectiles
             var relativePos = mousePos - transform.position;
             var angle = Mathf.Atan2(relativePos.y, relativePos.x) * Mathf.Rad2Deg;
             var numProjectiles = playerStats.numProjectiles;
-
-            var angleStep = 120 / numProjectiles;
             
-            for (var i = 0; i < numProjectiles; i++)
+            var angleStep = 120 / numProjectiles;
+
+            if (playerStats.numProjectiles == 1)
             {
-                var rotation = Quaternion.Euler(0, 0, angle + 45 + angleStep * i);
+                var rotation = Quaternion.Euler(0, 0, angle + 90 );
                 var projectileInstance = Instantiate(projectile, transform.position, rotation);
                 projectileInstance.GetComponent<Projectile>().damage = playerStats.damage;
                 projectileInstance.GetComponent<Projectile>().speed = playerStats.projectileSpeed;
                 projectileInstance.GetComponent<Projectile>().lifespan = lifespan;
                 projectileInstance.GetComponent<Projectile>().isFriendly = true;
             }
-                
+
+            else
+            {
+
+                for (var i = 0; i < numProjectiles; i++)
+                {
+                    var rotation = Quaternion.Euler(0, 0, angle + 45 + angleStep * i);
+                    var projectileInstance = Instantiate(projectile, transform.position, rotation);
+                    projectileInstance.GetComponent<Projectile>().damage = playerStats.damage;
+                    projectileInstance.GetComponent<Projectile>().speed = playerStats.projectileSpeed;
+                    projectileInstance.GetComponent<Projectile>().lifespan = lifespan;
+                    projectileInstance.GetComponent<Projectile>().isFriendly = true;
+                }
+            }
+
             audioSource.PlayOneShot(audioSource.clip);
             lastShot = Time.time;
         }

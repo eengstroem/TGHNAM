@@ -13,6 +13,11 @@ namespace Assets.Scripts.UI
         [SerializeField]
         public TMP_Text levelUpText;
 
+        //Level up/upgrade buttons
+        public Button levelUpButton1;
+        public Button levelUpButton2;
+        public Button levelUpButton3;
+        
         private PlayerStats playerStats;
         private void OnEnable()
         {
@@ -38,5 +43,31 @@ namespace Assets.Scripts.UI
             levelUpMenu.SetActive(false);
             Time.timeScale = 1;
         }
+
+        void Start()
+        {
+            levelUpButton1.onClick.AddListener(UpgradeFireRate);
+            levelUpButton2.onClick.AddListener(UpgradeDamage);
+            levelUpButton3.onClick.AddListener(UpgradeProjectiles);
+        }
+
+        void UpgradeFireRate()
+        {
+            playerStats.fireRate++;
+            ResumeLevel();
+        }
+        
+        void UpgradeDamage()
+        {
+            playerStats.damage++;
+            ResumeLevel();
+        }
+        
+        void UpgradeProjectiles()
+        {
+            playerStats.numProjectiles = playerStats.numProjectiles + 2;
+            ResumeLevel();
+        }
+        
     }
 }

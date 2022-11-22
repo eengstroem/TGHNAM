@@ -13,7 +13,7 @@ namespace Assets.Scripts.Player
         public float credits = 0;
         
         public float damage = 25f;
-        public float fireRate = 0.3f;
+        public float fireRate = 0.4f;
         public int numProjectiles = 1;
         public float projectileSpeed = 30f;
         public float critChance = 0.05f; 
