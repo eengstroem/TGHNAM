@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ namespace Assets.Scripts.Player
 {
     public class PlayerStats : MonoBehaviour
     {
+        public static event Action OnLevelUp;
         public int level = 0;
         public float exp = 0;
         public float expToNextLevel = 10;
@@ -34,6 +36,7 @@ namespace Assets.Scripts.Player
             level++;
             exp -= expToNextLevel;
             expToNextLevel = (int)(expToNextLevel * 1.1f);
+            OnLevelUp?.Invoke();
         }
 
         public void AddCredits(int creditsAmount)
