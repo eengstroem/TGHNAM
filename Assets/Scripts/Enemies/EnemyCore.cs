@@ -1,5 +1,6 @@
 using Assets.Scripts.Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 namespace Assets.Scripts.Enemies
@@ -9,22 +10,32 @@ namespace Assets.Scripts.Enemies
         [SerializeField]
         private bool CanTakeDamage;
         private bool _dead = false;
-        public int damage = 10;
-        public float Health = 100f;
         public GameObject ExperienceOrb;
         public DamagePopup damagePopup;
         private Random random = new Random();
         public FlashRed flashRed;
 
+        public PlayerStats playerStats;
+        public EnemyPathing enemyPathing;
+        
         //Enemy shooting stats and stuff
+        public int damage;
+        [FormerlySerializedAs("Health")] public float health;
         public float fireRate;
         public float numProjectiles;
         public float projectileSpeed;
 
+        public float healthScaler = 1.5f;
+        public float damageScaler = 100f;
+        public float movementSpeedScaler = 2f;
+        
         // Start is called before the first frame update
         void Start()
         {
             Physics2D.IgnoreLayerCollision(6, 6, true);
+            playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
+            enemyPathing = GameObject.FindWithTag("Enemy").GetComponent<EnemyPathing>();
+            ScaleEnemies();
         }
 
         // Update is called once per frame
@@ -36,15 +47,14 @@ namespace Assets.Scripts.Enemies
         {
             if (CanTakeDamage)
             {
-                var playerStats = GameObject.FindWithTag("Player").GetComponent<PlayerStats>();
                 var isCrit = random.NextDouble() < playerStats.critChance;
 
                 damageTaken = isCrit ? damageTaken * playerStats.critMultiplier : damageTaken;
                 
                 StartCoroutine(flashRed.TakeDamageFlashRed());
                 damagePopup.ShowDamage(damageTaken.ToString(), isCrit);
-                Health -= damageTaken;
-                if (Health <= 0 && !_dead)
+                health -= damageTaken;
+                if (health <= 0 && !_dead)
                 {
                     Die();
                 }
@@ -73,6 +83,15 @@ namespace Assets.Scripts.Enemies
                 collision.gameObject
                     .GetComponent<PlayerHealth>()
                     .TakeDamage(damage, PlayerHealth.EDamageType.COLLISION);
+        }
+
+        public void ScaleEnemies()
+        {
+            if (playerStats.level > 0)
+            {
+                health = playerStats.level * (healthScaler + 100);
+                damage = (int) (playerStats.level * damageScaler);
+            }
         }
     }
 }

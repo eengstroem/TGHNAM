@@ -34,6 +34,8 @@ namespace Assets.Scripts.Projectiles
             
             var angleStep = 120 / numProjectiles;
 
+            
+            //Some funky math to handle increasing number of projectiles
             if (playerStats.numProjectiles == 1)
             {
                 var rotation = Quaternion.Euler(0, 0, angle + 90 );
@@ -46,7 +48,6 @@ namespace Assets.Scripts.Projectiles
 
             else
             {
-
                 for (var i = 0; i < numProjectiles; i++)
                 {
                     var rotation = Quaternion.Euler(0, 0, angle + 45 + angleStep * i);

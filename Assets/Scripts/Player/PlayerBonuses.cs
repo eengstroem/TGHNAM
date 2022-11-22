@@ -31,7 +31,7 @@ namespace Assets.Scripts.Player
                 case "Experience":
                     player.GetComponent<PlayerStats>().AddExperience(1);
                     return;
-                case "Health":
+                case "health":
                     if (playerHealth.currentHealth + 20 > playerHealth.maxHealth)
                         playerHealth.currentHealth = playerHealth.maxHealth;
                     else
