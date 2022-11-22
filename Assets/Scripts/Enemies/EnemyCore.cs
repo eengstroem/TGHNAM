@@ -26,7 +26,7 @@ namespace Assets.Scripts.Enemies
         public float projectileSpeed;
 
         public float healthScaler = 1.5f;
-        public float damageScaler = 100f;
+        public float damageScaler = 1.5f;
         public float movementSpeedScaler = 2f;
         
         // Start is called before the first frame update
