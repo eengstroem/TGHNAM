@@ -38,12 +38,12 @@ namespace Assets.Scripts.UI
         {
             PlayerStats.OnLevelUp += EnableLevelUpScreen;
             playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
-            levelUpText1.text = "Upgrade fire rate";
-            levelUpText2.text = "Upgrade damage";
-            levelUpText3.text = "Upgrade projectiles";
-            levelUpText4.text = "Upgrade bullet speed";
-            levelUpText5.text = "Upgrade crit multiplier";
-            levelUpText6.text = "Upgrade crit chance";
+            levelUpText1.text = "+ ATK SPEED";
+            levelUpText2.text = "+ DMG";
+            levelUpText3.text = "+ PROJECTILES";
+            levelUpText4.text = "+ BULLET SPEED";
+            levelUpText5.text = "+ CRIT DMG%";
+            levelUpText6.text = "+ CRIT CHANCE%";
         }
 
         private void OnDisable()
@@ -76,13 +76,13 @@ namespace Assets.Scripts.UI
 
         void UpgradeFireRate()
         {
-            playerStats.fireRate++;
+            playerStats.fireRate*= 0.85f;
             ResumeLevel();
         }
         
         void UpgradeDamage()
         {
-            playerStats.damage++;
+            playerStats.damage *= 1.10f;
             ResumeLevel();
         }
         
@@ -106,7 +106,7 @@ namespace Assets.Scripts.UI
         
         void UpgradeCritMultiplier()
         {
-            playerStats.critMultiplier = playerStats.critMultiplier + 0.05f;
+            playerStats.critMultiplier = playerStats.critMultiplier + 0.10f;
             ResumeLevel();
         }
         

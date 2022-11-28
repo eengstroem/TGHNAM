@@ -12,13 +12,13 @@ namespace Assets.Scripts.Enemies
         Renderer m_Renderer;
         void Start()
         {
-            StartCoroutine(SpawnEnemy(SpawnInterval, enemyPrefabs));
+            StartCoroutine(SpawnEnemy(enemyPrefabs));
             m_Renderer = GetComponent<Renderer>();
         }
 
-        private IEnumerator SpawnEnemy(float interval, GameObject enemy)
+        private IEnumerator SpawnEnemy(GameObject enemy)
         {
-            yield return new WaitForSeconds(interval);  
+            yield return new WaitForSeconds(SpawnInterval);  
             // Silly random settings to spawn at random points
             if (!m_Renderer.isVisible)
             {
@@ -26,7 +26,7 @@ namespace Assets.Scripts.Enemies
                 Quaternion.identity);
 
 
-                StartCoroutine(SpawnEnemy(interval, enemy));
+                StartCoroutine(SpawnEnemy(enemy));
             }
         }
     }
