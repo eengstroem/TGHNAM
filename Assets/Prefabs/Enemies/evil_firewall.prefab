@@ -123,14 +123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanTakeDamage: 0
-  damage: 10
-  Health: 100
   ExperienceOrb: {fileID: 7831093397286282553, guid: 46d0cf0f5e769ab479067b537fa0c96d, type: 3}
   damagePopup: {fileID: 0}
   flashRed: {fileID: 0}
+  playerStats: {fileID: 0}
+  enemyPathing: {fileID: 0}
+  damage: 10
+  health: 100
   fireRate: 1
   numProjectiles: 1
   projectileSpeed: 30
+  healthScaler: 1.5
+  damageScaler: 1.5
+  movementSpeedScaler: 2
 --- !u!61 &-712732640226453634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -184,7 +189,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 12b6feac238c4764e82b35357b28958b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.005
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -20,10 +20,7 @@ GameObject:
   - component: {fileID: 4740901591280682703}
   - component: {fileID: 2398683724937556707}
   - component: {fileID: 8326044301106404244}
-  - component: {fileID: 6374645370206207691}
-  - component: {fileID: 5834253662770638646}
   - component: {fileID: 8624389699862588054}
-  - component: {fileID: 9139891674998083486}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -111,8 +108,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.07}
-  m_Size: {x: 1.32, y: 1.5899969}
+  m_Offset: {x: -0.009182811, y: -0.10756922}
+  m_Size: {x: 1.0738351, y: 1.3135455}
   m_Direction: 0
 --- !u!50 &8446497033498506798
 Rigidbody2D:
@@ -147,8 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a97fd28c004f24790c0f0eaa9eae9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 2440412347625572981, guid: 1d73f6f34ae7700409425733249742ee, type: 3}
+  projectile: {fileID: 2440412347625572981, guid: 965317e586cc93c4184e268c06ff42b5, type: 3}
   shootingEnabled: 1
+  lifespan: 1
   mainCam: {fileID: 0}
   audioSource: {fileID: -3274503387517365181}
 --- !u!114 &-3013537800035073473
@@ -190,11 +188,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  healthRegen: 1
+  healthRegen: 5
   flashRed: {fileID: 8326044301106404244}
-  collisionInvulnerabilityTime: 0
-  projectileInvulnerabilityTime: 0
-  miscInvulnerabilityTime: 0.1
+  collisionInvulnerabilityTime: 1
+  projectileInvulnerabilityTime: 1
+  miscInvulnerabilityTime: 1
 --- !u!82 &-3274503387517365181
 AudioSource:
   m_ObjectHideFlags: 0
@@ -207,7 +205,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bb060d429c372a54cbb9e7574b04b7a4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.01
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -339,43 +337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 5794937433709969525}
---- !u!114 &6374645370206207691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801454778154853127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a8552cfa11c0b438c7e0569a7f8eda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  exp: 0
-  expToNextLevel: 10
-  credits: 0
-  damage: 25
-  fireRate: 0.3
-  numProjectiles: 3
-  projectileSpeed: 30
-  critChance: 0.05
-  critMultiplier: 2
-  creditText: {fileID: 0}
-  levelText: {fileID: 0}
---- !u!114 &5834253662770638646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801454778154853127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2216683d5527e1479b41e9c2d84ffad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
 --- !u!114 &8624389699862588054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,22 +355,9 @@ MonoBehaviour:
   credits: 0
   damage: 25
   fireRate: 0.3
-  numProjectiles: 3
+  numProjectiles: 1
   projectileSpeed: 30
   critChance: 0.05
   critMultiplier: 2
   creditText: {fileID: 0}
   levelText: {fileID: 0}
---- !u!114 &9139891674998083486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801454778154853127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2216683d5527e1479b41e9c2d84ffad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpawnerPrefab: {fileID: 5187217441359683390, guid: 0d9d537c747ce1e40b06dd68aeb74e49, type: 3}
