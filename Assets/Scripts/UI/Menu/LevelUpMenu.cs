@@ -69,8 +69,8 @@ namespace Assets.Scripts.UI
             levelUpButton1.onClick.AddListener(UpgradeFireRate);
             levelUpButton2.onClick.AddListener(UpgradeDamage);
             levelUpButton3.onClick.AddListener(UpgradeProjectiles);
-            levelUpButton4.onClick.AddListener(UpgradeCritMultiplier);
-            levelUpButton5.onClick.AddListener(UpgradeProjectileSpeed);
+            levelUpButton4.onClick.AddListener(UpgradeProjectileSpeed);
+            levelUpButton5.onClick.AddListener(UpgradeCritMultiplier);
             levelUpButton6.onClick.AddListener(UpgradeCritChance);
         }
 
