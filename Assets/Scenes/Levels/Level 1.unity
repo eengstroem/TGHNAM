@@ -4099,6 +4099,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4148623539547176408, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4203844976451517918, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4106,6 +4110,14 @@ PrefabInstance:
     - target: {fileID: 4212492625209937786, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4646693222897859757, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690770219819369876, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5975904600101194934, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4218,6 +4230,18 @@ PrefabInstance:
     - target: {fileID: 7683351734772899640, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 246.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250760511329278508, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8319245301719954995, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736983283141723930, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78477ca52d4af5443bf8bc6aa35e9a85, type: 3}
