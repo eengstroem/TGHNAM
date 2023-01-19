@@ -25,7 +25,7 @@ namespace Assets.Scripts.Enemies
         public float numProjectiles;
         public float projectileSpeed;
 
-        public float healthScaler = 1.5f;
+        public float healthScaler = 1.1f;
         public float damageScaler = 1.5f;
         public float movementSpeedScaler = 2f;
         
