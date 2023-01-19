@@ -1,4 +1,5 @@
 using Assets.Scripts.Enemies;
+using Assets.Scripts.Pickups;
 using Assets.Scripts.Player;
 using UnityEngine;
 
@@ -46,6 +47,13 @@ namespace Assets.Scripts.Projectiles
                     if (isFriendly)
                     {
                         collision.gameObject.GetComponent<EnemyCore>().TakeDamage(damage);
+                        Destroy(gameObject);
+                    }
+                    return;
+                case "LootChest":
+                    if (isFriendly)
+                    {
+                        collision.gameObject.GetComponent<ChestCore>().TakeDamage(damage);
                         Destroy(gameObject);
                     }
                     return;

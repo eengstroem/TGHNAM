@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3571056029385842978}
   - component: {fileID: 3571056029385842974}
   - component: {fileID: 3571056029385842975}
-  m_Layer: 7
+  - component: {fileID: -5467256065400336403}
+  m_Layer: 6
   m_Name: LootChest
-  m_TagString: Untagged
+  m_TagString: LootChest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,3 +134,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.6, y: 4.8}
   m_EdgeRadius: 0
+--- !u!114 &-5467256065400336403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571056029385842979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a76c8032fc4d50930d1f29f7971bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanTakeDamage: 1
+  playerStats: {fileID: 0}
+  healthScaler: 1.1
+  HealthPickup: {fileID: 1490096386054198354, guid: 2f306d673258e124d87d9ea6a3bcb5f2, type: 3}
+  CreditCardPickup: {fileID: 8066560019425755385, guid: b20be03cc23fbe74f8a021d68d424e9c, type: 3}
+  health: 50
