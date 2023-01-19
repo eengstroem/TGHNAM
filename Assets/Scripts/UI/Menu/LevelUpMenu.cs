@@ -82,7 +82,7 @@ namespace Assets.Scripts.UI
         
         void UpgradeDamage()
         {
-            playerStats.damage *= 1.10f;
+            playerStats.damage += 5f;
             ResumeLevel();
         }
         

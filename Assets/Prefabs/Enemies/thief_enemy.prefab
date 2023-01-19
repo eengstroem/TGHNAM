@@ -159,8 +159,8 @@ MonoBehaviour:
   flashRed: {fileID: 7656289714380812919}
   playerStats: {fileID: 0}
   enemyPathing: {fileID: 0}
-  damage: 0
-  health: 100
+  damage: 10
+  health: 75
   fireRate: 0
   numProjectiles: 0
   projectileSpeed: 0
