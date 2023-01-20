@@ -165,7 +165,7 @@ MonoBehaviour:
   numProjectiles: 0
   projectileSpeed: 0
   healthScaler: 1.5
-  damageScaler: 100
+  damageScaler: 1.5
   movementSpeedScaler: 2
 --- !u!114 &6398717076155286228
 MonoBehaviour:
